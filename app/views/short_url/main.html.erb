@@ -1,0 +1,20 @@
+Тестовое задание URL Shortener<br>
+Сделать API на sinatra или rails с использованием веб сервера thin. Апи создает короткие ссылки. Для бекенда использовать em-hiredis (или mysql2).<br>
+Пример,<br>
+Запрос создания ссылок:<br>
+POST /<br>
+Content-Type: application/json<br>
+{<br>
+"longUrl": "https://www.rust-lang.org/ru-RU/documentation.html"<br>
+}<br>
+Ответ:<br>
+200 OK<br>
+Content-Type: application/json<br>
+{<br>
+"url": "http://127.0.0.1/fj5uhd74"<br>
+}<br>
+Запрос перехода:<br>
+GET /fj5uhd74<br>
+Ответ:<br>
+HTTP/1.1 301 Moved Permanently<br>
+Location: https://www.rust-lang.org/ru-RU/documentation.html<br>
